@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Lemon
+  - Ground
+  - Watermelon
+  - Blueberry
+  - BlueBerry Cube
+  - Lemon Cube
+  - Watermelon Cube
+  - Bread
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Bg
+    uniqueID: 396858895
+    locked: 0
+  - name: Bg text
+    uniqueID: 2846201983
+    locked: 0
+  - name: Wall
+    uniqueID: 657039459
+    locked: 0
+  - name: Ingredients
+    uniqueID: 1375240983
+    locked: 0
+  - name: Socket Cover
+    uniqueID: 900596629
+    locked: 0
+  - name: Appliances
+    uniqueID: 3082104387
+    locked: 0
+  - name: Appliances Overlay
+    uniqueID: 2061533541
+    locked: 0
