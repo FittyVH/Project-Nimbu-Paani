@@ -7,8 +7,7 @@ public class DialogueSystem : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip pageTurnAudio;
-    // [SerializeField] GameObject lastImg;
-
+    
     public GameObject[] comic;
     int i = 0;
 
