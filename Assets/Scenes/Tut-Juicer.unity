@@ -2648,6 +2648,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1923492272}
     - target: {fileID: 1234117779070924019, guid: 022ab1f4c8e8266438460d57c614a37e, type: 3}
+      propertyPath: nextSceneName
+      value: LevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234117779070924019, guid: 022ab1f4c8e8266438460d57c614a37e, type: 3}
       propertyPath: correctIngredients.Array.size
       value: 2
       objectReference: {fileID: 0}
