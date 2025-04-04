@@ -601,6 +601,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &289018344 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 1152620322878294707, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
+  m_PrefabInstance: {fileID: 472046754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &314699219 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9068502595468584914, guid: e67d5d5803bcccd41b0ce02472de96bd, type: 3}
@@ -726,11 +731,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8286156520440612256, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
   m_PrefabInstance: {fileID: 472046754}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &472046756 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6375560290440176267, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
-  m_PrefabInstance: {fileID: 472046754}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &510245367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -780,13 +780,33 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: alpha
+      value: 
+      objectReference: {fileID: 289018344}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1896560994}
     - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: inGameUI
+      value: 
+      objectReference: {fileID: 1493212861}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1384631581}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: blackRimUp
+      value: 
+      objectReference: {fileID: 1070604152}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: blackRimDown
+      value: 
+      objectReference: {fileID: 1255827337}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
       propertyPath: startIngredientUI
       value: 
-      objectReference: {fileID: 472046756}
+      objectReference: {fileID: 1850909887}
     - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
       propertyPath: serveDrinkPromptUI
       value: 
@@ -1822,6 +1842,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!224 &1070604152 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2461863157325435359, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
+  m_PrefabInstance: {fileID: 472046754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1095693380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1960,6 +1985,11 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2538110498319514679, guid: e67d5d5803bcccd41b0ce02472de96bd, type: 3}
   m_PrefabInstance: {fileID: 4328298800303943766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1255827337 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4905784460957965163, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
+  m_PrefabInstance: {fileID: 472046754}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1353178052
 GameObject:
@@ -2584,6 +2614,11 @@ Transform:
   - {fileID: 582707926}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1850909887 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7995194095034274400, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
+  m_PrefabInstance: {fileID: 472046754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1859023723 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1234117779070924019, guid: 022ab1f4c8e8266438460d57c614a37e, type: 3}
@@ -3294,12 +3329,12 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1408204821}
+  - {fileID: 510245367}
   - {fileID: 5322194}
   - {fileID: 47040491}
   - {fileID: 129316985}
   - {fileID: 114686953}
-  - {fileID: 510245367}
-  - {fileID: 1408204821}
   - {fileID: 194211922}
   - {fileID: 1896560998}
   - {fileID: 1681228775}

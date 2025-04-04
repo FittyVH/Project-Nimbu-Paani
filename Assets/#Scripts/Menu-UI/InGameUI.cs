@@ -1,13 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class InGameUI : MonoBehaviour
 {
-    [SerializeField] GameObject startIngredientUI;
     [SerializeField] GameObject inGameIngredientList;
     [SerializeField] GameObject serveDrinkPromptUI;
     [SerializeField] GameObject canvas;
+
+    //start ingredient UI components
+    [Header("start ingredient UI components")]
+    [SerializeField] RectTransform startIngredientUI;
+    [SerializeField] RectTransform blackRimUp;
+    [SerializeField] RectTransform blackRimDown;
+    [SerializeField] CanvasGroup alpha;
+    [SerializeField] float popInTime = 0.7f;
 
     //pause menu 
     public bool pauseMenuOpen = false;
@@ -35,7 +43,17 @@ public class InGameUI : MonoBehaviour
     {
         gameStarted = true;
         Time.timeScale = 1f;
-        startIngredientUI.SetActive(false);
+        
+        blackRimUp.transform.localPosition = new Vector2(0f, 597f);
+        blackRimUp.DOAnchorPos(new Vector2(0f, 900f), popInTime, false).SetEase(Ease.InOutQuint);
+
+        blackRimDown.transform.localPosition = new Vector2(0f, -617f);
+        blackRimDown.DOAnchorPos(new Vector2(0f, -900f), popInTime, false).SetEase(Ease.InOutQuint);
+
+        startIngredientUI.transform.localPosition = new Vector2(0f, 0f);
+        startIngredientUI.DOAnchorPos(new Vector2(1800f, 0f), popInTime, false).SetEase(Ease.InOutQuint);
+
+        alpha.DOFade(0, popInTime);
     }
 
     public void OnNoClicked()

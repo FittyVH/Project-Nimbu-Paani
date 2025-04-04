@@ -2152,9 +2152,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8286156520440612256, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
   m_PrefabInstance: {fileID: 1173940348}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1173940350 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6375560290440176267, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
+--- !u!224 &1173940350 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4905784460957965163, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
+  m_PrefabInstance: {fileID: 1173940348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1173940351 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2461863157325435359, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
+  m_PrefabInstance: {fileID: 1173940348}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1173940352 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7995194095034274400, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
   m_PrefabInstance: {fileID: 1173940348}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1181308537
@@ -2330,6 +2340,11 @@ RectTransform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1846056812382458937, guid: e4ebc3bf4cbb3b64ea8562d908c4de7e, type: 3}
   m_PrefabInstance: {fileID: 1459563281}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1472321680 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 1152620322878294707, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
+  m_PrefabInstance: {fileID: 1173940348}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1475555925
 GameObject:
@@ -2753,13 +2768,33 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: alpha
+      value: 
+      objectReference: {fileID: 1472321680}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1896560994}
     - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
-      propertyPath: startIngredientUI
+      propertyPath: inGameUI
+      value: 
+      objectReference: {fileID: 1800987727}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 2077353972}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: blackRimUp
+      value: 
+      objectReference: {fileID: 1173940351}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: blackRimDown
       value: 
       objectReference: {fileID: 1173940350}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: startIngredientUI
+      value: 
+      objectReference: {fileID: 1173940352}
     - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
       propertyPath: serveDrinkPromptUI
       value: 
@@ -3771,6 +3806,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 5322194}
+  - {fileID: 1800987726}
+  - {fileID: 1154547095}
   - {fileID: 47040491}
   - {fileID: 114686953}
   - {fileID: 635977100}
@@ -3780,8 +3817,6 @@ SceneRoots:
   - {fileID: 1181308537}
   - {fileID: 1826969485}
   - {fileID: 1963109090}
-  - {fileID: 1800987726}
-  - {fileID: 1154547095}
   - {fileID: 1790915967}
   - {fileID: 167770409}
   - {fileID: 387449154}

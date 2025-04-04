@@ -501,6 +501,11 @@ Transform:
   - {fileID: 1331090111}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &122258164 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7995194095034274400, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
+  m_PrefabInstance: {fileID: 7832249492863310895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &175552736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -580,6 +585,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d49deab276eda4b941d6d19caab5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &581054208 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 1152620322878294707, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
+  m_PrefabInstance: {fileID: 7832249492863310895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &582707925
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,11 +850,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &720710065 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6375560290440176267, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
-  m_PrefabInstance: {fileID: 7832249492863310895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &720710066 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8286156520440612256, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
@@ -1503,6 +1508,11 @@ GameObject:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6231183728197339938, guid: 69d9964974a4b82429a483a06e3ec4e6, type: 3}
   m_PrefabInstance: {fileID: 1069946311032653461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1329138533 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4905784460957965163, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
+  m_PrefabInstance: {fileID: 7832249492863310895}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1331090110
 GameObject:
@@ -2571,6 +2581,11 @@ Transform:
   - {fileID: 1852533872}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!224 &1977154700 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2461863157325435359, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
+  m_PrefabInstance: {fileID: 7832249492863310895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2036061649
 GameObject:
   m_ObjectHideFlags: 0
@@ -3316,7 +3331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1846056812382458937, guid: e4ebc3bf4cbb3b64ea8562d908c4de7e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5033095491649699824, guid: e4ebc3bf4cbb3b64ea8562d908c4de7e, type: 3}
       propertyPath: m_IsActive
@@ -3683,13 +3698,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 909207274}
     - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: alpha
+      value: 
+      objectReference: {fileID: 581054208}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1896560994}
     - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: inGameUI
+      value: 
+      objectReference: {fileID: 1690098350}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 87709233}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: blackRimUp
+      value: 
+      objectReference: {fileID: 1329138533}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
+      propertyPath: blackRimDown
+      value: 
+      objectReference: {fileID: 1977154700}
+    - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
       propertyPath: startIngredientUI
       value: 
-      objectReference: {fileID: 720710065}
+      objectReference: {fileID: 122258164}
     - target: {fileID: 6674995458492344710, guid: 8f9a44e4f51d43743b3e9131451065e7, type: 3}
       propertyPath: serveDrinkPromptUI
       value: 
@@ -3777,12 +3812,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1896560998}
     m_Modifications:
     - target: {fileID: 2162454942507335073, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_Name
+      value: blackRimDown
       objectReference: {fileID: 0}
     - target: {fileID: 4226870319169108332, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_Name
+      value: blackRimUp
       objectReference: {fileID: 0}
     - target: {fileID: 5285602020859654129, guid: 1d8d8b54d8811dd4a9e796dc92f5d3aa, type: 3}
       propertyPath: m_IsActive

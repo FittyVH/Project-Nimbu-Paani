@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1469326020933388550}
   - component: {fileID: 2345727992734714802}
   - component: {fileID: 6248148673016656116}
+  - component: {fileID: 8017521642247959048}
   m_Layer: 5
   m_Name: lowAlpha
   m_TagString: Untagged
@@ -72,3 +73,15 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!225 &8017521642247959048
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3019417737602635594}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
