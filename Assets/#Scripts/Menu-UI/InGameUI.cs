@@ -9,6 +9,12 @@ public class InGameUI : MonoBehaviour
     [SerializeField] GameObject serveDrinkPromptUI;
     [SerializeField] GameObject canvas;
 
+    //pause menu 
+    public bool pauseMenuOpen = false;
+
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] InGameUI inGameUI;
+
     public bool gameStarted = false; // keeping track of the state of the menu
     bool menuOpen = false; // ingredients shown at game start
 
@@ -22,6 +28,7 @@ public class InGameUI : MonoBehaviour
     {
         ShowIngredients();
         ShowServeDrinkUI();
+        OpenPauseMenu();
     }
 
     public void OnStartClicked()
@@ -74,6 +81,25 @@ public class InGameUI : MonoBehaviour
                 Time.timeScale = 1f;
                 serveDrinkPromptUI.SetActive(false);
             }
+        }
+    }
+
+    void OpenPauseMenu()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && gameStarted)
+        {
+            pauseMenuOpen = !pauseMenuOpen;
+        }
+
+        if (pauseMenuOpen)
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else if (!pauseMenuOpen && gameStarted)
+        {
+            Time.timeScale = 1f;
+            pauseMenu.SetActive(false);
         }
     }
 }

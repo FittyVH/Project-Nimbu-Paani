@@ -5,34 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    bool menuOpen = false;
-
-    [SerializeField] GameObject pauseMenu;
     [SerializeField] InGameUI inGameUI;
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && inGameUI.gameStarted)
-        {
-            menuOpen = !menuOpen;
-        }
-
-        if (menuOpen)
-        {
-            pauseMenu.SetActive(true);
-            Time.timeScale = 0f;
-        }
-        else if (!menuOpen && inGameUI.gameStarted)
-        {
-            Time.timeScale = 1f;
-            pauseMenu.SetActive(false);
-        }
-    }
 
     // button actions
     public void OnResumeClicked()
     {
-        menuOpen = false;
+        inGameUI.pauseMenuOpen = false;
     }
 
     public void OnQuitClicked()
