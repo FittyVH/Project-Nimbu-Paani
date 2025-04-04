@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1717878fdc1ed7043b9db019f3bd4ba1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - transitionAnimator: {instanceID: 0}
+  - pageTurn: {fileID: 8300000, guid: f39457f27b27e32459b2f5119a4afdbd, type: 3}
+  - secAudioSrc: {fileID: 5568477527612677260, guid: 09358754ea85b774988b25561a3b28c8, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -9,6 +9,12 @@ public class LevelSelector : MonoBehaviour
     [SerializeField] GameObject popUI;
     [SerializeField] String sceneName;
 
+    [SerializeField] Animator transitionAnimator;
+    [SerializeField] float transitionTime = 0.5f;
+
+    [SerializeField] AudioClip pageTurn;
+    [SerializeField] AudioSource secAudioSrc;
+
     void Start()
     {
         popUI.SetActive(false);
@@ -24,6 +30,15 @@ public class LevelSelector : MonoBehaviour
     }
     public void OnPlayClicked()
     {
+        StartCoroutine(TransitinLoader());
+        secAudioSrc.clip = pageTurn;
+        secAudioSrc.Play();
+    }
+    
+    IEnumerator TransitinLoader()
+    {
+        transitionAnimator.SetTrigger("Start");
+        yield return new WaitForSecondsRealtime(transitionTime);
         SceneManager.LoadScene(sceneName);
     }
 }
