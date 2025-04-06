@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class DialogueSystem : MonoBehaviour
 {
+    // audio
+    [Header ("Audio")]
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip pageTurnAudio;
 
+    // transition animation
+    [Header ("transition animation")]
     [SerializeField] Animator transitionAnimator;
     [SerializeField] float transitionTime = 0.5f;
 
+    // comic pages
+    [Header ("comic pages")]
     public GameObject[] comic;
     int i = 0;
 

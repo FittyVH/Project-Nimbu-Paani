@@ -7,6 +7,8 @@ using DG.Tweening;
 
 public class LevelSelector : MonoBehaviour
 {
+    // ui elements
+    [Header ("UI elements")]
     [SerializeField] RectTransform popUI;
     [SerializeField] float popInTime = 0.7f;
     [SerializeField] String sceneName;

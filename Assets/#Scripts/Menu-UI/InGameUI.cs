@@ -5,9 +5,12 @@ using DG.Tweening;
 
 public class InGameUI : MonoBehaviour
 {
+    //other menus
+    [Header ("Other menus")]
     [SerializeField] GameObject inGameIngredientList;
     [SerializeField] GameObject serveDrinkPromptUI;
     [SerializeField] GameObject canvas;
+    [SerializeField] GameObject pauseMenu;
 
     //start ingredient UI components
     [Header("start ingredient UI components")]
@@ -17,14 +20,14 @@ public class InGameUI : MonoBehaviour
     [SerializeField] CanvasGroup alpha;
     [SerializeField] float popInTime = 0.7f;
 
-    //pause menu 
-    public bool pauseMenuOpen = false;
-
-    [SerializeField] GameObject pauseMenu;
+    // script references
+    [Header ("script references")]
     [SerializeField] InGameUI inGameUI;
 
+    // bools
     public bool gameStarted = false; // keeping track of the state of the menu
-    bool menuOpen = false; // ingredients shown at game start
+    public bool pauseMenuOpen = false;
+    bool serveDrinkMenuOpen = false;
 
     void Start()
     {
@@ -43,7 +46,8 @@ public class InGameUI : MonoBehaviour
     {
         gameStarted = true;
         Time.timeScale = 1f;
-        
+
+        // ui animations
         blackRimUp.transform.localPosition = new Vector2(0f, 597f);
         blackRimUp.DOAnchorPos(new Vector2(0f, 900f), popInTime, false).SetEase(Ease.InOutQuint);
 
@@ -66,18 +70,21 @@ public class InGameUI : MonoBehaviour
     {
         bool ingredientListActive = false;
 
-        if (Input.GetKey(KeyCode.Tab))
+        if (gameStarted)
         {
-            ingredientListActive = !ingredientListActive;
-        }
+            if (Input.GetKey(KeyCode.Tab))
+            {
+                ingredientListActive = !ingredientListActive;
+            }
 
-        if (ingredientListActive)
-        {
-            inGameIngredientList.SetActive(true);
-        }
-        else
-        {
-            inGameIngredientList.SetActive(false);
+            if (ingredientListActive)
+            {
+                inGameIngredientList.SetActive(true);
+            }
+            else
+            {
+                inGameIngredientList.SetActive(false);
+            }
         }
     }
 
@@ -87,16 +94,15 @@ public class InGameUI : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                menuOpen = !menuOpen;
+                serveDrinkMenuOpen = !serveDrinkMenuOpen;
             }
 
-            if (menuOpen)
+            if (serveDrinkMenuOpen)
             {
                 serveDrinkPromptUI.SetActive(true);
             }
             else
             {
-                Time.timeScale = 1f;
                 serveDrinkPromptUI.SetActive(false);
             }
         }

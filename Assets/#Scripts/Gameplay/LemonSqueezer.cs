@@ -7,16 +7,6 @@ public class LemonSqueezer : MonoBehaviour
     public GameObject lemonCube;
     public Transform spawnPos;
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider.tag == "Lemon")

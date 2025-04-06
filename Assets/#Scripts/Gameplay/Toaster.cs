@@ -11,16 +11,6 @@ public class Toaster : MonoBehaviour
 
     [SerializeField] WireTop wireTop;
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (wireTop.isPlugged)

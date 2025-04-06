@@ -3,24 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class IngredientsManager : MonoBehaviour
 {
+    // ingredient manager
     [SerializeField] List<GameObject> correctIngredients;
     public List<string> currentIngredients;
     List<string> compareIngredients = new List<string>();
 
+    // game over UI components
+    [Header("game over UI components")]
+    [SerializeField] CanvasGroup gameOverUI;
+    [SerializeField] RectTransform blackScreen;
+    [SerializeField] float popIntime = 0.7f;
+    [SerializeField] float gameOverTime = 2f;
+
+    // others
+    [Header("next scene name")]
     [SerializeField] string nextSceneName;
 
-    [SerializeField] GameObject gameOverUI;
+    // audio
+    [Header ("Audio")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip pageTurnAudio;
 
+    // bools
     bool listIsEqual;
 
     void Start()
     {
-        gameOverUI.SetActive(false);
-
-        foreach(var ingredient in correctIngredients)
+        foreach (var ingredient in correctIngredients)
         {
             compareIngredients.Add(ingredient.tag);
         }
@@ -29,14 +42,6 @@ public class IngredientsManager : MonoBehaviour
     void Update()
     {
         listIsEqual = compareIngredients.OrderBy(x => x).SequenceEqual(currentIngredients.OrderBy(x => x));
-
-        if (gameOverUI.activeSelf)
-        {
-            Debug.Log("game Over");
-            StartCoroutine(RestartScene());
-            // Invoke(nameof(RestartScene), 1.5f);
-            // RestartScene();
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -54,28 +59,45 @@ public class IngredientsManager : MonoBehaviour
     {
         if (listIsEqual)
         {
-            Time.timeScale = 1f;
-            // Debug.Log("sahi h");
             SceneManager.LoadScene(nextSceneName);
         }
         else
         {
-            Time.timeScale = 1f;
-            gameOverUI.SetActive(true);
-            // StartCoroutine(RestartScene());
+            PageTurnAudio();
+            StartCoroutine(GameOverRoutine());
         }
     }
 
-    // void RestartScene()
-    // {
-    //     gameOverUI.SetActive(false);
-    //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    // }
-
-    public IEnumerator RestartScene()
+    IEnumerator GameOverRoutine()
     {
-        yield return new WaitForSeconds(1.5f);
-        Debug.Log("started coroutine");
+        BlackScreenAnimations();
+        yield return new WaitForSeconds(popIntime);
+        GameOverUIFadeIn();
+        yield return new WaitForSeconds(gameOverTime);
+        GameOverUIFadeOut();
+        yield return new WaitForSeconds(popIntime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void BlackScreenAnimations()
+    {
+        blackScreen.transform.localPosition = new Vector2(2100f, 0f);
+        blackScreen.DOAnchorPos(new Vector2(0f, 0f), popIntime, false).SetEase(Ease.InOutQuint);
+    }
+
+    void GameOverUIFadeIn()
+    {
+        gameOverUI.DOFade(1, popIntime);
+    }
+
+    void GameOverUIFadeOut()
+    {
+        gameOverUI.DOFade(0, popIntime);
+    }
+
+    void PageTurnAudio()
+    {
+        audioSource.clip = pageTurnAudio;
+        audioSource.Play();
     }
 }

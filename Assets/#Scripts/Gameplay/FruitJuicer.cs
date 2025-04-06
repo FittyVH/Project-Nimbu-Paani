@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class FruitJuicer : MonoBehaviour
 {
+    // fuit-cubes
     [System.Serializable]
     public class FruitMapping
     {
         public string tag;       // The tag of the fruit
         public GameObject cube;  // The cube to spawn for this fruit
     }
+    public float speed = 10f; // throw speed
 
     public List<FruitMapping> fruitMappings; // A list of tag-cube pairs
     public Transform spawnPos;
-    [SerializeField] WireTop wireTop;
 
-    public float speed = 10f;
+    // script references
+    [Header ("script references")]
+    [SerializeField] WireTop wireTop;
 
     private Dictionary<string, GameObject> fruitToCubeMap;
 

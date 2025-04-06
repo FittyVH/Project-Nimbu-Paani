@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class InGameDialogues : MonoBehaviour
 {
+    // audio
+    [Header ("Audio")]
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip pageTurnAudio;
-    [SerializeField] GameObject lastImg;
 
+    // comic pages
+    [Header ("comic pages")]
+    [SerializeField] GameObject lastImg;
     public GameObject[] comic;
     int i = 0;
 
