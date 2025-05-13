@@ -2,18 +2,38 @@ using UnityEngine;
 
 public class DragSprite : MonoBehaviour
 {
-    private Rigidbody2D rb;       
-    private Camera cam;               
-    private bool isDragging = false;  
-    private Vector3 offset;           
-    private float savedGravityScale;  
-    private RigidbodyConstraints2D originalConstraints; 
+    private Rigidbody2D rb;
+    private Camera cam;
+    private bool isDragging = false;
+    private Vector3 offset;
+    private float savedGravityScale;
+    private RigidbodyConstraints2D originalConstraints;
+
+    // script references
+    [Header("script references")]
+    [SerializeField] Telepathy telepathy;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main; // Cache the main camera
         originalConstraints = rb.constraints; // Save initial Rigidbody2D constraints
+    }
+
+    void FixedUpdate()
+    {
+        if (isDragging)
+        {
+            //rotations
+            if (telepathy.telepathyOn && Input.GetKey(KeyCode.A))
+            {
+                rb.rotation += 1f;
+            }
+            if (telepathy.telepathyOn && Input.GetKey(KeyCode.D))
+            {
+                rb.rotation -= 1f;
+            }
+        }
     }
 
     private void OnMouseDown()
@@ -60,6 +80,9 @@ public class DragSprite : MonoBehaviour
 
         // Restore original constraints (rotation and movement)
         rb.constraints = originalConstraints;
+
+        // Reset telepathy
+        telepathy.telepathyOn = false;
     }
 
     private Vector3 GetMouseWorldPosition()

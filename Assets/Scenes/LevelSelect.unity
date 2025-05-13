@@ -3093,7 +3093,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: you are a novice. but you dream of the becoming one of the finest bartenders
+  m_text: you are a novice. but you dream of becoming one of the finest bartenders
     your engineering college has ever seen (you are the only one in the college who
     wants to become one). But first, you need to learn the basics.
   m_isRightToLeft: 0

@@ -15,9 +15,17 @@ public class IngredientsManager : MonoBehaviour
     // game over UI components
     [Header("game over UI components")]
     [SerializeField] CanvasGroup gameOverUI;
-    [SerializeField] RectTransform blackScreen;
+    [SerializeField] RectTransform blackScreenGameOver;
     [SerializeField] float popIntime = 0.7f;
     [SerializeField] float gameOverTime = 2f;
+
+    // victory UI components
+    [Header("victory UI components")]
+    [SerializeField] RectTransform blackScreenVictory;
+    [SerializeField] RectTransform servingDrinkYou;
+    [SerializeField] RectTransform servingDrinkCustomer;
+    [SerializeField] RectTransform successCustomer;
+    [SerializeField] CanvasGroup victoryText;
 
     // others
     [Header("next scene name")]
@@ -59,7 +67,8 @@ public class IngredientsManager : MonoBehaviour
     {
         if (listIsEqual)
         {
-            SceneManager.LoadScene(nextSceneName);
+            PageTurnAudio();
+            StartCoroutine(VictoryRoutine());
         }
         else
         {
@@ -70,7 +79,7 @@ public class IngredientsManager : MonoBehaviour
 
     IEnumerator GameOverRoutine()
     {
-        BlackScreenAnimations();
+        BlackScreenAnimationsGameOver();
         yield return new WaitForSeconds(popIntime);
         GameOverUIFadeIn();
         yield return new WaitForSeconds(gameOverTime);
@@ -79,10 +88,27 @@ public class IngredientsManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    void BlackScreenAnimations()
+    IEnumerator VictoryRoutine()
     {
-        blackScreen.transform.localPosition = new Vector2(2100f, 0f);
-        blackScreen.DOAnchorPos(new Vector2(0f, 0f), popIntime, false).SetEase(Ease.InOutQuint);
+        BlackScreenAnimationVictory();
+        yield return new WaitForSeconds(popIntime);
+        ServingDrinkYouAnimation();
+        yield return new WaitForSeconds(popIntime);
+        ServingDrinkCustomerAnimation();
+        yield return new WaitForSeconds(popIntime + 0.7f);
+        ServingDrinkCustomerOutAnimation();
+        ServingDrinkYouOutAnimation();
+        yield return new WaitForSeconds(popIntime);
+        SuccessCustomerAnimation();
+        yield return new WaitForSeconds(popIntime + 0.7f);
+        VictoryTextAnimation();
+    }
+
+    // game over UI animations
+    void BlackScreenAnimationsGameOver()
+    {
+        blackScreenGameOver.transform.localPosition = new Vector2(2100f, 0f);
+        blackScreenGameOver.DOAnchorPos(new Vector2(0f, 0f), popIntime, false).SetEase(Ease.InOutQuint);
     }
 
     void GameOverUIFadeIn()
@@ -93,6 +119,46 @@ public class IngredientsManager : MonoBehaviour
     void GameOverUIFadeOut()
     {
         gameOverUI.DOFade(0, popIntime);
+    }
+
+    // victory UI animations
+    void BlackScreenAnimationVictory()
+    {
+        blackScreenVictory.transform.localPosition = new Vector2(2100f, 0f);
+        blackScreenVictory.DOAnchorPos(new Vector2(0f, 0f), popIntime, false).SetEase(Ease.InOutQuint);
+    }
+
+    void ServingDrinkYouAnimation()
+    {
+        servingDrinkYou.transform.localPosition = new Vector2(-500f, 1000f);
+        servingDrinkYou.DOAnchorPos(new Vector2(-500f, -100f), popIntime, false).SetEase(Ease.InOutQuint);
+    }
+
+    void ServingDrinkCustomerAnimation()
+    {
+        servingDrinkCustomer.transform.localPosition = new Vector2(500f, -1000f);
+        servingDrinkCustomer.DOAnchorPos(new Vector2(500f, 100f), popIntime, false).SetEase(Ease.InOutQuint);
+    }
+
+    void ServingDrinkYouOutAnimation()
+    {
+        servingDrinkYou.DOAnchorPos(new Vector2(-500f, 1000f), popIntime, false).SetEase(Ease.InOutQuint);
+    }
+
+    void ServingDrinkCustomerOutAnimation()
+    {
+        servingDrinkCustomer.DOAnchorPos(new Vector2(500f, -1000f), popIntime, false).SetEase(Ease.InOutQuint);
+    }
+
+    void SuccessCustomerAnimation()
+    {
+        successCustomer.transform.localPosition = new Vector2(2000f, 0f);
+        successCustomer.DOAnchorPos(new Vector2(500f, 0f), popIntime, false).SetEase(Ease.InOutQuint);
+    }
+
+    void VictoryTextAnimation()
+    {
+        victoryText.DOFade(1, popIntime);
     }
 
     void PageTurnAudio()

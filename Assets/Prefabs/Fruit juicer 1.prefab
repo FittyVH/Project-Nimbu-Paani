@@ -428,7 +428,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.50000024, y: -0.00000014067746}
-  m_ConnectedAnchor: {x: 0.4898247, y: 0.09211279}
+  m_ConnectedAnchor: {x: 0.4898247, y: 0.09211059}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 5519807728339277556}
   m_Layer: 0
   m_Name: Wire
-  m_TagString: Untagged
+  m_TagString: Wires
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1362,6 +1362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2883cf3d5a84434e971bb056ccece78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  telepathy: {fileID: 0}
 --- !u!114 &343343291036960907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1646,7 +1647,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.55895025, y: -0.02045864}
-  m_ConnectedAnchor: {x: 0.56686074, y: -0.02045926}
+  m_ConnectedAnchor: {x: 0.56686175, y: -0.02045926}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2113,6 +2114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb42d3e18181c84dad1e08f80c86a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 25
   fruitMappings:
   - tag: Watermelon
     cube: {fileID: 8403779795685028548, guid: 58259e0194942ed40a8bd28c71de09b0, type: 3}
@@ -2120,7 +2122,6 @@ MonoBehaviour:
     cube: {fileID: 8403779795685028548, guid: bb92ef2e11c98d643adf25075001f890, type: 3}
   spawnPos: {fileID: 7761207006298884197}
   wireTop: {fileID: 8174257957879692858}
-  speed: 25
 --- !u!114 &4723907850391556085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2762,7 +2763,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.55895025, y: -0.02045864}
-  m_ConnectedAnchor: {x: 0.7377918, y: -0.9972211}
+  m_ConnectedAnchor: {x: 0.7377918, y: -0.997221}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
