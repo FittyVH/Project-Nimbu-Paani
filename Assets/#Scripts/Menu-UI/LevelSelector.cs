@@ -11,6 +11,7 @@ public class LevelSelector : MonoBehaviour
     [Header ("UI elements")]
     [SerializeField] RectTransform popUI;
     [SerializeField] float popInTime = 0.7f;
+    [SerializeField] float hoverZoomTime = 0.2f;
     [SerializeField] String sceneName;
 
     [SerializeField] Animator transitionAnimator;
@@ -19,9 +20,22 @@ public class LevelSelector : MonoBehaviour
     [SerializeField] AudioClip pageTurn;
     [SerializeField] AudioSource secAudioSrc;
 
+    RectTransform rectTransform;
+
     void Start()
     {
-        // popUI.SetActive(false);
+        rectTransform = GetComponent<RectTransform>();
+    }
+
+    // hover animations
+    public void OnHoverEnter()
+    {
+        rectTransform.DOScale(new Vector2(1.2f, 1.2f), hoverZoomTime);
+    }
+
+    public void OnHoverExit()
+    {
+        rectTransform.DOScale(new Vector2(1f, 1f), hoverZoomTime);
     }
 
     public void LevelClick()
@@ -38,12 +52,12 @@ public class LevelSelector : MonoBehaviour
     }
     public void OnPlayClicked()
     {
-        StartCoroutine(TransitinLoader());
+        StartCoroutine(TransitionLoader());
         secAudioSrc.clip = pageTurn;
         secAudioSrc.Play();
     }
     
-    IEnumerator TransitinLoader()
+    IEnumerator TransitionLoader()
     {
         transitionAnimator.SetTrigger("Start");
         yield return new WaitForSecondsRealtime(transitionTime);

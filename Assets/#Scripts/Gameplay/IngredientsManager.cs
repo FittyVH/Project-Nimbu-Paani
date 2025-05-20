@@ -67,6 +67,10 @@ public class IngredientsManager : MonoBehaviour
     {
         if (listIsEqual)
         {
+            if (nextSceneName != null)
+            {
+                SceneManager.LoadScene(nextSceneName);
+            }
             PageTurnAudio();
             StartCoroutine(VictoryRoutine());
         }
