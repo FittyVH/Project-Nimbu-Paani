@@ -17,10 +17,21 @@ public class FruitJuicer : MonoBehaviour
     public Transform spawnPos;
 
     // script references
-    [Header ("script references")]
+    [Header("script references")]
     [SerializeField] WireTop wireTop;
 
+    // vibration parameters
+    [Header("vibration parameters")]
+    [SerializeField] float duration = 2f;
+    [SerializeField] float magnitude = 0.2f;
+    float elapsedTime = 0f;
+
+    [SerializeField] GameObject juicer;
+    Transform originalJuicerTransform;
+
     private Dictionary<string, GameObject> fruitToCubeMap;
+
+    public bool isJuicing = false;
 
     void Start()
     {
@@ -33,20 +44,23 @@ public class FruitJuicer : MonoBehaviour
                 fruitToCubeMap.Add(mapping.tag, mapping.cube);
             }
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (wireTop.isPlugged && fruitToCubeMap.TryGetValue(other.collider.tag, out GameObject cubeToSpawn))
         {
-            SpawnJuice(other, cubeToSpawn);
+            // destroy fruit
+            Destroy(other.gameObject);
+
+            StartCoroutine(JuicingDelay(other, cubeToSpawn));
+            StartCoroutine(Vibrate());
         }
     }
 
     void SpawnJuice(Collision2D fruit, GameObject cubeToSpawn)
     {
-        Destroy(fruit.gameObject);
-
         // Instantiate the corresponding cube
         GameObject spawnedCube = Instantiate(cubeToSpawn, spawnPos.position, spawnPos.rotation);
 
@@ -55,5 +69,30 @@ public class FruitJuicer : MonoBehaviour
         {
             rb.AddForce(-spawnedCube.transform.right * speed, ForceMode2D.Impulse);
         }
+    }
+
+    IEnumerator JuicingDelay(Collision2D other, GameObject cubeToSpawn)
+    {
+        yield return new WaitForSeconds(2f);
+        SpawnJuice(other, cubeToSpawn);
+    }
+
+    // vibration
+    IEnumerator Vibrate()
+    {
+        // originalJuicerTransform.position = juicer.transform.position;
+        elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            float x = Random.Range(-1f, 1f) * magnitude;
+
+            yield return null;
+
+            juicer.transform.position = new Vector2(juicer.transform.position.x + x, juicer.transform.position.y);
+        }
+        Debug.Log("loop over");
+        juicer.transform.localPosition = Vector3.zero;
     }
 }

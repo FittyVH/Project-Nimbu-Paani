@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class WireTop : MonoBehaviour
 {
+    [Header ("references")]
     [SerializeField] GameObject connectionCollider;
+
+    [Header("audio references")]
+    [SerializeField] AudioClip beepSound;
+    [SerializeField] AudioSource audioSource;
 
     private Rigidbody2D rb;
     private Camera cam;
@@ -47,7 +52,7 @@ public class WireTop : MonoBehaviour
             rb.constraints = originalConstraints;
             rb.bodyType = RigidbodyType2D.Dynamic;
 
-            // reanble collider
+            // re-enable connection collider
             Invoke(nameof(EnableConnectionCollider), 0.2f);
         }
     }
@@ -97,6 +102,10 @@ public class WireTop : MonoBehaviour
             rb.angularVelocity = 0f;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             rb.bodyType = RigidbodyType2D.Static;
+
+            // play beep sound
+            audioSource.clip = beepSound;
+            audioSource.Play();
 
             isPlugged = true;
         }

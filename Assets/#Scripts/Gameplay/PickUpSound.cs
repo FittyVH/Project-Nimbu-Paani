@@ -15,7 +15,6 @@ public class PickUpSound : MonoBehaviour
     private void OnMouseDown()
     {
         audioSource.clip = pickUpSound;
-        audioSource.volume = 0.2f;
         audioSource.Play();
     }
 }

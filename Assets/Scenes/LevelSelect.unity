@@ -863,6 +863,7 @@ GameObject:
   - component: {fileID: 757812339}
   - component: {fileID: 757812338}
   - component: {fileID: 757812337}
+  - component: {fileID: 757812341}
   m_Layer: 5
   m_Name: episode 1 button
   m_TagString: Untagged
@@ -904,6 +905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUI: {fileID: 82636926}
   popInTime: 0.5
+  hoverZoomTime: 0.1
   sceneName: Scene2-Drake
   transitionAnimator: {fileID: 1896560999}
   transitionTime: 0.5
@@ -931,8 +933,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.8415094, g: 0.8415094, b: 0.8415094, a: 1}
-    m_PressedColor: {r: 0.6075471, g: 0.6075471, b: 0.6075471, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1003,6 +1005,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757812335}
   m_CullTransparentMesh: 1
+--- !u!114 &757812341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757812335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 757812337}
+          m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 757812337}
+          m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+          m_MethodName: OnHoverExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &765354114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,6 +1856,7 @@ GameObject:
   - component: {fileID: 1282630798}
   - component: {fileID: 1282630797}
   - component: {fileID: 1282630800}
+  - component: {fileID: 1282630801}
   m_Layer: 5
   m_Name: episode 0 button
   m_TagString: Untagged
@@ -1826,7 +1874,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1794518443}
   m_Father: {fileID: 765354115}
@@ -1858,8 +1906,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.8415094, g: 0.8415094, b: 0.8415094, a: 1}
-    m_PressedColor: {r: 0.6075471, g: 0.6075471, b: 0.6075471, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1944,11 +1992,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUI: {fileID: 695411600}
   popInTime: 0.5
+  hoverZoomTime: 0.1
   sceneName: Tut-LemonSqeezer
   transitionAnimator: {fileID: 1896560999}
   transitionTime: 0.5
   pageTurn: {fileID: 8300000, guid: f39457f27b27e32459b2f5119a4afdbd, type: 3}
   secAudioSrc: {fileID: 645243609}
+--- !u!114 &1282630801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282630795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1282630800}
+          m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1282630800}
+          m_TargetAssemblyTypeName: LevelSelector, Assembly-CSharp
+          m_MethodName: OnHoverExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &1309554079 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6118581038909348549, guid: 3af8d72ce8c456d439d3b51aea08c8a7, type: 3}
@@ -2594,7 +2688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 765354115}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1

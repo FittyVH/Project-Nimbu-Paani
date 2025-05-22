@@ -12,6 +12,7 @@ public class LevelSelector : MonoBehaviour
     [SerializeField] RectTransform popUI;
     [SerializeField] float popInTime = 0.7f;
     [SerializeField] float hoverZoomTime = 0.2f;
+    [SerializeField] float roataionMagnitude = 15f;
     [SerializeField] String sceneName;
 
     [SerializeField] Animator transitionAnimator;
@@ -30,12 +31,15 @@ public class LevelSelector : MonoBehaviour
     // hover animations
     public void OnHoverEnter()
     {
+        float randomRotation = UnityEngine.Random.Range(-1f, 1f) * roataionMagnitude;
         rectTransform.DOScale(new Vector2(1.2f, 1.2f), hoverZoomTime);
+        rectTransform.DORotate(new Vector3(0f, 0f, randomRotation), hoverZoomTime);
     }
 
     public void OnHoverExit()
     {
         rectTransform.DOScale(new Vector2(1f, 1f), hoverZoomTime);
+        rectTransform.DORotate(new Vector3(0f, 0f, 0f), hoverZoomTime);
     }
 
     public void LevelClick()
