@@ -12,6 +12,8 @@ public class IngredientsManager : MonoBehaviour
     public List<string> currentIngredients;
     List<string> compareIngredients = new List<string>();
 
+    [SerializeField] int currentLevel;
+
     // game over UI components
     [Header("game over UI components")]
     [SerializeField] CanvasGroup gameOverUI;
@@ -25,14 +27,14 @@ public class IngredientsManager : MonoBehaviour
     [SerializeField] RectTransform servingDrinkYou;
     [SerializeField] RectTransform servingDrinkCustomer;
     [SerializeField] RectTransform successCustomer;
-    [SerializeField] CanvasGroup victoryText;
+    [SerializeField] GameObject victoryText;
 
     // others
     [Header("next scene name")]
     [SerializeField] string nextSceneName;
 
     // audio
-    [Header ("Audio")]
+    [Header("Audio")]
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip pageTurnAudio;
 
@@ -71,8 +73,15 @@ public class IngredientsManager : MonoBehaviour
             {
                 SceneManager.LoadScene(nextSceneName);
             }
+            
             PageTurnAudio();
             StartCoroutine(VictoryRoutine());
+
+            if (currentLevel >= PlayerPrefs.GetInt("levelsCompleted"))
+            {
+                PlayerPrefs.SetInt("levelsCompleted", currentLevel + 1);
+            }
+            Debug.Log(PlayerPrefs.GetInt("levelsCompleted"));
         }
         else
         {
@@ -162,7 +171,8 @@ public class IngredientsManager : MonoBehaviour
 
     void VictoryTextAnimation()
     {
-        victoryText.DOFade(1, popIntime);
+        victoryText.SetActive(true);
+        victoryText.GetComponent<CanvasGroup>().DOFade(1, popIntime);
     }
 
     void PageTurnAudio()

@@ -92,7 +92,6 @@ public class FruitJuicer : MonoBehaviour
 
             juicer.transform.position = new Vector2(juicer.transform.position.x + x, juicer.transform.position.y);
         }
-        Debug.Log("loop over");
         juicer.transform.localPosition = Vector3.zero;
     }
 }

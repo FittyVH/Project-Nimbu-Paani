@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class InGameUI : MonoBehaviour
 {
@@ -64,6 +65,11 @@ public class InGameUI : MonoBehaviour
     {
         Time.timeScale = 1f;
         serveDrinkPromptUI.SetActive(false);
+    }
+
+    public void OnNextClicked()
+    {
+        SceneManager.LoadScene("LevelSelect");
     }
 
     void ShowIngredients()

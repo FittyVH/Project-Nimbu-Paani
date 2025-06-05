@@ -1949,11 +1949,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913641026}
   m_CullTransparentMesh: 1
---- !u!1 &974338716 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 564907395910819532, guid: ad25b7bb562786d42960660afae4a44c, type: 3}
-  m_PrefabInstance: {fileID: 8606094249907960706}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &985174170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,6 +2989,10 @@ PrefabInstance:
       propertyPath: gameOverUI
       value: 
       objectReference: {fileID: 1923492272}
+    - target: {fileID: 1234117779070924019, guid: 022ab1f4c8e8266438460d57c614a37e, type: 3}
+      propertyPath: currentLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1234117779070924019, guid: 022ab1f4c8e8266438460d57c614a37e, type: 3}
       propertyPath: nextSceneName
       value: LevelSelect
@@ -4104,14 +4103,6 @@ PrefabInstance:
     - target: {fileID: 4619341493574493912, guid: ad25b7bb562786d42960660afae4a44c, type: 3}
       propertyPath: m_Name
       value: Fruit juicer
-      objectReference: {fileID: 0}
-    - target: {fileID: 6264706527849132569, guid: ad25b7bb562786d42960660afae4a44c, type: 3}
-      propertyPath: juicer
-      value: 
-      objectReference: {fileID: 974338716}
-    - target: {fileID: 6264706527849132569, guid: ad25b7bb562786d42960660afae4a44c, type: 3}
-      propertyPath: magnitude
-      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8174257957879692858, guid: ad25b7bb562786d42960660afae4a44c, type: 3}
       propertyPath: connectionCollider

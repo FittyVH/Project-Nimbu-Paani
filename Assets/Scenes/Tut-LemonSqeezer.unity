@@ -508,6 +508,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1010235856}
     - target: {fileID: 1234117779070924019, guid: 022ab1f4c8e8266438460d57c614a37e, type: 3}
+      propertyPath: currentLevel
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234117779070924019, guid: 022ab1f4c8e8266438460d57c614a37e, type: 3}
       propertyPath: nextSceneName
       value: Tut-Juicer
       objectReference: {fileID: 0}
