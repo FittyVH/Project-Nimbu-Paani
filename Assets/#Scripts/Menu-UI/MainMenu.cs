@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class MainMenu : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] AudioClip pageTurn;
     [SerializeField] AudioSource secAudioSrc;
+
+    [Header("sub-menus")]
+    [SerializeField] float popInTime = 0.7f;
+    [SerializeField] RectTransform settingsPanel;
 
     public void OnPlayClicked()
     {
@@ -20,6 +25,14 @@ public class MainMenu : MonoBehaviour
     public void OnQuitClicked()
     {
         Application.Quit();
+    }
+    public void OnSettingsClicked()
+    {
+        settingsPanel.DOAnchorPos(new Vector2(0f, 0f), popInTime, false).SetEase(Ease.InOutQuint);
+    }
+    public void OnBackSettingsClicked()
+    {
+        settingsPanel.DOAnchorPos(new Vector2(0f, -2000f), popInTime, false).SetEase(Ease.InOutQuint);
     }
 
     IEnumerator TransitionLoader()

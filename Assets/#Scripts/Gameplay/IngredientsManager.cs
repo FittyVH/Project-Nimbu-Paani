@@ -56,7 +56,14 @@ public class IngredientsManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        currentIngredients.Add(other.gameObject.tag);
+        if (other.gameObject.tag == "Cat Treat Box")
+        {
+            return;
+        }
+        else
+        {
+            currentIngredients.Add(other.gameObject.tag);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -73,7 +80,7 @@ public class IngredientsManager : MonoBehaviour
             {
                 SceneManager.LoadScene(nextSceneName);
             }
-            
+
             PageTurnAudio();
             StartCoroutine(VictoryRoutine());
 

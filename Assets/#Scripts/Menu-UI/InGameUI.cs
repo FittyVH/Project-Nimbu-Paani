@@ -6,8 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class InGameUI : MonoBehaviour
 {
+    //audio
+    [Header("audio")]
+    [SerializeField] AudioClip woosh;
+    [SerializeField] AudioSource audioSrc;
+
     //other menus
-    [Header ("Other menus")]
+    [Header("Other menus")]
     [SerializeField] GameObject inGameIngredientList;
     [SerializeField] GameObject serveDrinkPromptUI;
     [SerializeField] GameObject canvas;
@@ -45,6 +50,9 @@ public class InGameUI : MonoBehaviour
 
     public void OnStartClicked()
     {
+        audioSrc.clip = woosh;
+        audioSrc.Play();
+        
         gameStarted = true;
         Time.timeScale = 1f;
 

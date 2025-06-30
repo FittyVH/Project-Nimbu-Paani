@@ -26,6 +26,11 @@ public class FruitJuicer : MonoBehaviour
     [SerializeField] float magnitude = 0.2f;
     float elapsedTime = 0f;
 
+    // audios
+    [Header("audios")]
+    [SerializeField] AudioClip blenderSound;
+    [SerializeField] AudioSource audioSrc;
+
     [SerializeField] GameObject juicer;
     Transform originalJuicerTransform;
 
@@ -51,6 +56,9 @@ public class FruitJuicer : MonoBehaviour
     {
         if (wireTop.isPlugged && fruitToCubeMap.TryGetValue(other.collider.tag, out GameObject cubeToSpawn))
         {
+            // play audio
+            audioSrc.clip = blenderSound;
+            audioSrc.Play();
             // destroy fruit
             Destroy(other.gameObject);
 
