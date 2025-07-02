@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/DrakeLevel.unity
     guid: d31a98f19dcae31429bf10c0c75263d6
   - enabled: 1
+    path: Assets/Scenes/Levels/FillerLevel1.unity
+    guid: 29106a6a92d5fcc418a7d7adcc77c4fb
+  - enabled: 1
     path: Assets/Scenes/CutScenes/Scene3-Billu.unity
     guid: 2f979d76f18372d4aaf8a92c6201ea21
   - enabled: 1

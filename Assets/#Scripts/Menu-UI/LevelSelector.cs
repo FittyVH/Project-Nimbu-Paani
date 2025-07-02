@@ -43,6 +43,7 @@ public class LevelSelector : MonoBehaviour
     {
         // rectTransform.DOScale(new Vector2(1f, 1f), hoverZoomTime);
         // rectTransform.DORotate(new Vector3(0f, 0f, 0f), hoverZoomTime);
+        levelBorder.transform.position = new Vector3(0f, 1500f);
     }
 
     public void LevelClick()

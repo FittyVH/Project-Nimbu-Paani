@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5324981701286610510}
   - component: {fileID: 1108000746136951655}
   - component: {fileID: 2078330183316899112}
-  - component: {fileID: 976966848109741824}
+  - component: {fileID: -7858420430243225959}
   m_Layer: 0
-  m_Name: lemonCube
-  m_TagString: Lemon Cube
+  m_Name: StrawberryCube
+  m_TagString: Strawberry Cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.9960785, g: 0.86274517, b: 0, a: 1}
+  m_Color: {r: 0.9960785, g: 0, b: 0.33333334, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -159,7 +159,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &976966848109741824
+--- !u!114 &-7858420430243225959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2704f27708e4404f9a9146d768ac7ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyParticles: {fileID: 8610715622365094035, guid: cc5714e74f34ddb42892b69049f35c7d, type: 3}
+  destroyParticles: {fileID: 8610715622365094035, guid: 55c127f1e693728448f8cb34d5038e38, type: 3}

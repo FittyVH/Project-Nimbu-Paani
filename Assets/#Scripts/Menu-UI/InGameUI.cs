@@ -17,6 +17,7 @@ public class InGameUI : MonoBehaviour
     [SerializeField] GameObject serveDrinkPromptUI;
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject restartMenu;
 
     //start ingredient UI components
     [Header("start ingredient UI components")]
@@ -46,10 +47,12 @@ public class InGameUI : MonoBehaviour
         ShowIngredients();
         ShowServeDrinkUI();
         OpenPauseMenu();
+        OpenRestartMenu();
     }
 
     public void OnStartClicked()
     {
+        Debug.Log("started");
         audioSrc.clip = woosh;
         audioSrc.Play();
         
@@ -122,6 +125,11 @@ public class InGameUI : MonoBehaviour
         }
     }
 
+    public void OnNoServeClicked()
+    {
+        serveDrinkMenuOpen = false;
+    }
+
     void OpenPauseMenu()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && gameStarted)
@@ -139,5 +147,22 @@ public class InGameUI : MonoBehaviour
             Time.timeScale = 1f;
             pauseMenu.SetActive(false);
         }
+    }
+
+    void OpenRestartMenu()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && gameStarted)
+        {
+            restartMenu.SetActive(true);
+        }
+    }
+
+    public void OnYesRestartClicked()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void OnNoRestartClicked()
+    {
+        restartMenu.SetActive(false);
     }
 }
