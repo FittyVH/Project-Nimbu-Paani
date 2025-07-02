@@ -18,19 +18,16 @@ public class SkipCutscene : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("escape");
             pauseMenuOpen = !pauseMenuOpen;
         }
 
         if (pauseMenuOpen)
         {
-            Debug.Log("open");
             pauseMenu.SetActive(true);
             dialogueSystem.enabled = false;
         }
         if (!pauseMenuOpen)
         {
-            Debug.Log("close");
             pauseMenu.SetActive(false);
             dialogueSystem.enabled = true;
         }

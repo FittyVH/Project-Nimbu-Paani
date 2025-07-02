@@ -2251,6 +2251,8 @@ MonoBehaviour:
     cube: {fileID: 8403779795685028548, guid: 58259e0194942ed40a8bd28c71de09b0, type: 3}
   - tag: Blueberry
     cube: {fileID: 8403779795685028548, guid: bb92ef2e11c98d643adf25075001f890, type: 3}
+  - tag: Strawberry
+    cube: {fileID: 8403779795685028548, guid: 4da5b4b23bfb58f4aacf0382d420c3f5, type: 3}
   spawnPos: {fileID: 7761207006298884197}
   wireTop: {fileID: 8174257957879692858}
   duration: 2
