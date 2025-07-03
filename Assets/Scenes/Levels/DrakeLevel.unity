@@ -7074,13 +7074,13 @@ PrefabInstance:
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 6934233785841212460, guid: 6cb965a55fb7eab4c8415e3f98711a2d, type: 3}
+      propertyPath: audioSrc
+      value: 
+      objectReference: {fileID: 47040493}
+    - target: {fileID: 6934233785841212460, guid: 6cb965a55fb7eab4c8415e3f98711a2d, type: 3}
       propertyPath: restartPopUp
       value: 
       objectReference: {fileID: 872209707}
-    - target: {fileID: 7556243706999884306, guid: 6cb965a55fb7eab4c8415e3f98711a2d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

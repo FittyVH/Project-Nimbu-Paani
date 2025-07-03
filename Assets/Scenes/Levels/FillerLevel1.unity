@@ -5779,7 +5779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1896560995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7489,9 +7489,21 @@ PrefabInstance:
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 6934233785841212460, guid: 6cb965a55fb7eab4c8415e3f98711a2d, type: 3}
+      propertyPath: audioSrc
+      value: 
+      objectReference: {fileID: 47040493}
+    - target: {fileID: 6934233785841212460, guid: 6cb965a55fb7eab4c8415e3f98711a2d, type: 3}
       propertyPath: restartPopUp
       value: 
       objectReference: {fileID: 872209707}
+    - target: {fileID: 6934233785841212460, guid: 6cb965a55fb7eab4c8415e3f98711a2d, type: 3}
+      propertyPath: cube2LimitList.Array.data[1].cube
+      value: 
+      objectReference: {fileID: 8403779795685028548, guid: 4da5b4b23bfb58f4aacf0382d420c3f5, type: 3}
+    - target: {fileID: 6934233785841212460, guid: 6cb965a55fb7eab4c8415e3f98711a2d, type: 3}
+      propertyPath: cube2LimitList.Array.data[1].limit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7556243706999884306, guid: 6cb965a55fb7eab4c8415e3f98711a2d, type: 3}
       propertyPath: m_Enabled
       value: 0

@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Extras/MainMenu.unity
+    path: Assets/Scenes/Menus/MainMenu.unity
     guid: 0bdd2a3a6f0583e49bce083974de69e8
   - enabled: 1
-    path: Assets/Scenes/Extras/LevelSelect.unity
+    path: Assets/Scenes/Menus/LevelSelect.unity
     guid: cff26330d8a0c934f98a0a367694d7c7
   - enabled: 1
     path: Assets/Scenes/Levels/Tut-LemonSqeezer.unity

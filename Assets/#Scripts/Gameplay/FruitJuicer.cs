@@ -13,7 +13,7 @@ public class FruitJuicer : MonoBehaviour
     }
     public float speed = 10f; // throw speed
 
-    public List<FruitMapping> fruitMappings; // A list of tag-cube pairs
+    public List<FruitMapping> fruitMappings; // A list of tag-cube pairs,the class
     public Transform spawnPos;
 
     // script references
@@ -42,7 +42,7 @@ public class FruitJuicer : MonoBehaviour
     {
         // Initialize the dictionary from the list
         fruitToCubeMap = new Dictionary<string, GameObject>();
-        foreach (var mapping in fruitMappings)
+        foreach (var mapping in fruitMappings) // the list of the class we created
         {
             if (!fruitToCubeMap.ContainsKey(mapping.tag))
             {
