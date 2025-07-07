@@ -38,6 +38,7 @@ public class DialogueSystem : MonoBehaviour
         {
             StartCoroutine(TransitinLoader());
             audioSource.clip = pageTurnAudio;
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
             audioSource.Play();
         }
     }
@@ -45,6 +46,7 @@ public class DialogueSystem : MonoBehaviour
     void PlayAudio()
     {
         audioSource.clip = pageTurnAudio;
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
         audioSource.Play();
     }
 

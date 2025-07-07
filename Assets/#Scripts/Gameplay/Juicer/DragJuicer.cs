@@ -1,7 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class DragSprite : MonoBehaviour
+public class DragJuicer : MonoBehaviour
 {
+    [Header("Rope Constraint")]
+    [SerializeField] Transform otherRopeEnd;
+    [SerializeField] float maxRopeLength = 8f; // Should match ropeSegLen × segmentLength
+
     private Rigidbody2D rb;
     private Camera cam;
     private bool isDragging = false;
@@ -57,12 +63,23 @@ public class DragSprite : MonoBehaviour
     {
         if (isDragging)
         {
-            // Target position with offset
-            Vector3 targetPosition = GetMouseWorldPosition() + offset;
+            Vector3 mouseWorld = GetMouseWorldPosition();
+            Vector3 targetPosition = mouseWorld + offset;
 
-            // velocity needed to move the sprite
-            Vector2 direction = (targetPosition - transform.position) / Time.fixedDeltaTime;
-            rb.velocity = direction; // Apply velocity to Rigidbody2D
+            // Clamp distance between this and the other end of the rope
+            if (otherRopeEnd != null)
+            {
+                float currentDistance = Vector3.Distance(targetPosition, otherRopeEnd.position);
+                if (currentDistance > maxRopeLength)
+                {
+                    // Clamp target to rope max length
+                    Vector3 direction = (targetPosition - otherRopeEnd.position).normalized;
+                    targetPosition = otherRopeEnd.position + direction * maxRopeLength;
+                }
+            }
+
+            Vector2 velocity = (targetPosition - transform.position) / Time.fixedDeltaTime;
+            rb.velocity = velocity;
         }
     }
 
