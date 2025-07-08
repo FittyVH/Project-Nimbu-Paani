@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/CatLevel.unity
     guid: f47bc14110d92f248b9aff85605fbcb5
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
+    path: Assets/Scenes/Menus/GameOver.unity
     guid: fe426243c8d1f7b4ab604cb26bc4d0cd
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity

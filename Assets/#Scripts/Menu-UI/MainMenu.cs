@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.UI;
+using System;
+using System.Linq;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
@@ -17,12 +21,38 @@ public class MainMenu : MonoBehaviour
     [SerializeField] RectTransform settingsPanel;
     [SerializeField] RectTransform creditsPanel;
     [SerializeField] GameObject creditsText;
+    [SerializeField] TMP_Dropdown resolutionDropDown;
+
+    Resolution[] resolutions;
 
     bool isFullScreen = true;
 
     void Awake()
     {
         Screen.SetResolution(1920, 1080, true);
+    }
+
+    void Start()
+    {
+        resolutions = Screen.resolutions;
+        resolutionDropDown.ClearOptions();
+        List<String> resOptions = new List<string>();
+
+        int currentResolutionIndex = 0;
+
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + "X" + resolutions[i].height;
+            resOptions.Add(option);
+
+            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+        resolutionDropDown.AddOptions(resOptions);
+        resolutionDropDown.value = currentResolutionIndex;
+        resolutionDropDown.RefreshShownValue();
     }
 
     public void OnPlayClicked()
@@ -47,15 +77,21 @@ public class MainMenu : MonoBehaviour
     {
         if (isFullScreen)
         {
-            Screen.SetResolution(1280, 720, FullScreenMode.Windowed);
+            Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, FullScreenMode.Windowed);
         }
         else if (!isFullScreen)
         {
             Screen.fullScreen = true;
-            Screen.SetResolution(1920, 1080, true);
+            Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
         }
         isFullScreen = !isFullScreen;
     }
+    public void SetResolution(int resIndex)
+    {
+        Resolution resolution = resolutions[resIndex];
+        Screen.SetResolution(resolution.width, resolution.height, isFullScreen);
+    }
+
     public void OnCreditsClicked()
     {
         StartCoroutine(CreditsRoll());
@@ -64,6 +100,23 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void Res1920()
+    {
+        Screen.SetResolution(1920, 1080, isFullScreen);
+    }
+    public void Res1600()
+    {
+        Screen.SetResolution(1600, 900, isFullScreen);
+    }
+    public void Res1360()
+    {
+        Screen.SetResolution(1360, 768, isFullScreen);
+    }
+    public void Res1280()
+    {
+        Screen.SetResolution(1280, 720, isFullScreen);
+    }
+
 
     IEnumerator TransitionLoader()
     {

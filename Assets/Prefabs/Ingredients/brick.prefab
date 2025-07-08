@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 14840073929132973}
   - component: {fileID: 7510185621409064498}
   - component: {fileID: 1478187757517984561}
+  - component: {fileID: 901957290668031115}
   m_Layer: 0
   m_Name: brick
   m_TagString: Untagged
@@ -158,7 +159,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &7510185621409064498
 MonoBehaviour:
@@ -269,3 +270,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &901957290668031115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7181276864563419196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2883cf3d5a84434e971bb056ccece78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  telepathy: {fileID: 0}
+  sprite: {fileID: 1458926598384293313}
+  darkShader: {fileID: 2100000, guid: 90959da5449bbd444ad46b0f0a57bc0b, type: 2}
+  defaltShader: {fileID: 2100000, guid: 3ad26c869ab2f674a8dc9916cf5a7974, type: 2}

@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class WireTop : MonoBehaviour
 {
-    [Header ("references")]
+    [Header("references")]
     [SerializeField] GameObject connectionCollider;
 
     [Header("audio references")]
     [SerializeField] AudioClip beepSound;
     [SerializeField] AudioSource audioSource;
+
+    [Header("Sprite & material")]
+    [SerializeField] SpriteRenderer sprite;
+    [SerializeField] Material darkShader;
+    [SerializeField] Material defaltShader;
 
     private Rigidbody2D rb;
     private Camera cam;
@@ -109,5 +114,14 @@ public class WireTop : MonoBehaviour
 
             isPlugged = true;
         }
+    }
+    
+    void OnMouseOver()
+    {
+        sprite.material = darkShader;
+    }
+    void OnMouseExit()
+    {
+        sprite.material = defaltShader;
     }
 }

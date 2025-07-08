@@ -592,6 +592,9 @@ MonoBehaviour:
   connectionCollider: {fileID: 0}
   beepSound: {fileID: 8300000, guid: ea70ea809bc7c23448aa8f71e61fb1cb, type: 3}
   audioSource: {fileID: 1665750047244645425}
+  sprite: {fileID: 7265716638653303960}
+  darkShader: {fileID: 2100000, guid: 90959da5449bbd444ad46b0f0a57bc0b, type: 2}
+  defaltShader: {fileID: 2100000, guid: 3ad26c869ab2f674a8dc9916cf5a7974, type: 2}
   isPlugged: 0
 --- !u!114 &3469233453360936494
 MonoBehaviour:
@@ -1494,6 +1497,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   telepathy: {fileID: 0}
+  sprite: {fileID: 7254866939365355872}
+  darkShader: {fileID: 2100000, guid: 90959da5449bbd444ad46b0f0a57bc0b, type: 2}
+  defaltShader: {fileID: 2100000, guid: 3ad26c869ab2f674a8dc9916cf5a7974, type: 2}
 --- !u!114 &343343291036960907
 MonoBehaviour:
   m_ObjectHideFlags: 0

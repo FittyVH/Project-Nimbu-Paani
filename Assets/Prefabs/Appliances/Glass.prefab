@@ -969,9 +969,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctIngredients:
   - {fileID: 8403779795685028548, guid: bb92ef2e11c98d643adf25075001f890, type: 3}
-  - {fileID: 8403779795685028548, guid: 58259e0194942ed40a8bd28c71de09b0, type: 3}
-  - {fileID: 8403779795685028548, guid: dfb6c98c60894b7469e519b354d3b709, type: 3}
+  - {fileID: 8403779795685028548, guid: 4da5b4b23bfb58f4aacf0382d420c3f5, type: 3}
+  - {fileID: 2091947144799068592, guid: 9c819f8486a461b438be81cc2712b474, type: 3}
+  - {fileID: 2091947144799068592, guid: 9c819f8486a461b438be81cc2712b474, type: 3}
+  - {fileID: 2091947144799068592, guid: 9c819f8486a461b438be81cc2712b474, type: 3}
   currentIngredients: []
+  currentLevel: 4
+  gameOverUI: {fileID: 0}
+  blackScreenGameOver: {fileID: 0}
+  popIntime: 0.7
+  gameOverTime: 2
+  blackScreenVictory: {fileID: 0}
+  servingDrinkYou: {fileID: 0}
+  servingDrinkCustomer: {fileID: 0}
+  successCustomer: {fileID: 0}
+  victoryText: {fileID: 0}
+  nextSceneName: 
+  audioSource: {fileID: 0}
+  pageTurnAudio: {fileID: 8300000, guid: f39457f27b27e32459b2f5119a4afdbd, type: 3}
 --- !u!60 &5544880550079748634
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1290,6 +1305,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2883cf3d5a84434e971bb056ccece78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  telepathy: {fileID: 0}
+  sprite: {fileID: 4868497539777392521}
+  darkShader: {fileID: 2100000, guid: 90959da5449bbd444ad46b0f0a57bc0b, type: 2}
+  defaltShader: {fileID: 2100000, guid: 3ad26c869ab2f674a8dc9916cf5a7974, type: 2}
 --- !u!114 &5492346261201253091
 MonoBehaviour:
   m_ObjectHideFlags: 0

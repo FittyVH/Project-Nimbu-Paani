@@ -13,6 +13,11 @@ public class DragSprite : MonoBehaviour
     [Header("script references")]
     [SerializeField] Telepathy telepathy;
 
+    [Header("Sprite & material")]
+    [SerializeField] SpriteRenderer sprite;
+    [SerializeField] Material darkShader;
+    [SerializeField] Material defaltShader;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -83,5 +88,14 @@ public class DragSprite : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = cam.nearClipPlane;
         return cam.ScreenToWorldPoint(mousePos);
+    }
+
+    void OnMouseOver()
+    {
+        sprite.material = darkShader;
+    }
+    void OnMouseExit()
+    {
+        sprite.material = defaltShader;
     }
 }
