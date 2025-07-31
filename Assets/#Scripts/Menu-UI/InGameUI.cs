@@ -10,6 +10,8 @@ public class InGameUI : MonoBehaviour
     [Header("audio")]
     [SerializeField] AudioClip woosh;
     [SerializeField] AudioSource audioSrc;
+    [SerializeField] AudioClip bgMusic;
+    [SerializeField] AudioSource bgAudioSrc;
 
     //other menus
     [Header("Other menus")]
@@ -55,7 +57,7 @@ public class InGameUI : MonoBehaviour
         Debug.Log("started");
         audioSrc.clip = woosh;
         audioSrc.Play();
-        
+
         gameStarted = true;
         Time.timeScale = 1f;
 
@@ -70,6 +72,9 @@ public class InGameUI : MonoBehaviour
         startIngredientUI.DOAnchorPos(new Vector2(1800f, 0f), popInTime, false).SetEase(Ease.InOutQuint);
 
         alpha.DOFade(0, popInTime);
+        
+        bgAudioSrc.clip = bgMusic;
+        bgAudioSrc.Play();
     }
 
     public void OnNoClicked()
